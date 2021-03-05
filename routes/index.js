@@ -1,4 +1,4 @@
-const { getInfo } = require("./../controllers");
+const { getInfo, getPrice } = require("./../controllers");
 const router = require("express").Router();
 
 router.get("/", (req, res) =>
@@ -6,5 +6,6 @@ router.get("/", (req, res) =>
 );
 
 router.get("/:symbol/info", getInfo);
+router.get("/:symbol/price", getPrice);
 
 module.exports = router;

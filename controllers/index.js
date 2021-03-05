@@ -8,4 +8,11 @@ module.exports = {
 
 		res.json(info);
 	},
+
+	getPrice: async (req, res) => {
+		const { symbol } = req.params;
+		const price = await finageClient.getPrice(symbol);
+
+		res.json(price);
+	},
 };
