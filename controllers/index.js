@@ -15,4 +15,11 @@ module.exports = {
 
 		res.json(price);
 	},
+
+	getTicks: async (req, res) => {
+		const { symbol, interval, from, to } = req.params;
+		const ticks = await finageClient.getTicks(symbol, from, to, interval);
+
+		res.json(ticks);
+	},
 };
