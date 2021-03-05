@@ -22,4 +22,11 @@ module.exports = {
 
 		res.json(ticks);
 	},
+
+	getSearchResults: async (req, res) => {
+		const { query } = req.params;
+		const results = await finageClient.getSearchResults(query);
+
+		res.json(results);
+	},
 };

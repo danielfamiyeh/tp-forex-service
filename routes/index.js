@@ -1,4 +1,9 @@
-const { getInfo, getPrice, getTicks } = require("./../controllers");
+const {
+	getInfo,
+	getPrice,
+	getTicks,
+	getSearchResults,
+} = require("./../controllers");
 const router = require("express").Router();
 
 router.get("/", (req, res) =>
@@ -7,6 +12,7 @@ router.get("/", (req, res) =>
 
 router.get("/:symbol/info", getInfo);
 router.get("/:symbol/price", getPrice);
+router.get("/search/:query", getSearchResults);
 router.get("/:symbol/ticks/:interval/:from/:to", getTicks);
 
 module.exports = router;
